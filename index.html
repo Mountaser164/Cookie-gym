@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cookie Clicker Game</h1>
+    <img id="cookie" src="cookie.png" alt="Klik op de cookie!">
+    <p>Punten: <span id="score">0</span></p>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Aankoop Productie-eenheden</h2>
+            <button id="buyAutoClicker" disabled>Koop Auto-Clicker (Kosten: 10 klikken)</button>
+            <p>Aantal Auto-Clickers: <span id="autoClickerCount">0</span></p>
+        </div>
+
+        <div class="section">
+            <h2>Upgrades</h2>
+            <button id="buyUpgrade">Koop Upgrade (+1 punt per klik, Kosten: 20 punten)</button>
+        </div>
+
+        <div class="section">
+            <h2>Overzicht</h2>
+            <p>Auto-Clickers: <span id="autoClickersOverview">0</span></p>
+            <p>Upgrades: <span id="upgradesOverview">0</span></p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
