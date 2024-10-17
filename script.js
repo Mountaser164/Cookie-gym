@@ -1,8 +1,14 @@
+
 let score = 0;
 let AutoClickers = 0;
 let Upgrad = 0;
+let second = 5000;
+let gosetInterval = 0;
+
+
 
 function addPoint(){
+   
     score++;
     showScore();
     
@@ -11,22 +17,25 @@ function addPoint(){
 
 
 function buy(){
-    if(score >= 10 ){
+    if(score >= 10 ){         
         score = score -10;
-        AutoClickers++;
-
+        AutoClickers++;   
         showScore();
+        showhand();
+
         document.getElementById("Overzicht").innerHTML=AutoClickers;
-        document.getElementById("AantalClickers").innerHTML=AutoClickers;
+        document.getElementById("AantalClickers").innerHTML=AutoClickers; 
 
-        
+           console.log("Your buy is successfull");
+           alert("Your buy is successful");
 
-        console.log("Your buy is succesful");
-        alert("Your buy is succesful");
+           startOutocliker()
+
 
     }else{
-        console.log("Your point is not enough");
-        alert("Your point is not enough");
+
+          console.log("You don't have enough cookies");
+          alert("You don't have enough cookies");
     }
         
 }
@@ -38,19 +47,41 @@ function showScore(){
 }
 
 
+
 function Upgrades(){
     if(score >= 20){
         score = score -20;
         Upgrad++;
-
         showScore();
 
         document.getElementById("overzicht2").innerHTML=Upgrad;
-        alert("Your buy is succesful");
+        document.getElementById("showupgrades").innerHTML= Upgrad; 
+
+        alert("Your buy is successfull");
 
     }else{
-        alert("Your point is not enough");
+        alert("You don't have enough cookies");
 
     }
 
+}
+
+
+// setInterval(addPoint, 1000);
+
+function startOutocliker(){
+
+    if( gosetInterval == 0)
+        gosetInterval = setInterval(handenaddpoint, second);
+
+ 
+}
+
+function showhand(){
+document.getElementById("handen").innerHTML +=' <img class = "hand"src="icons8-hand-48.png" alt="handfoto">'
+}
+
+function handenaddpoint(){
+    score = score + AutoClickers;
+    showScore();
 }

@@ -11,13 +11,20 @@ body {
     color: #3d3939;
 }
 
-#cookie {
+.cookie {
     width: 400px;
     cursor: pointer;
-    margin: 20px 0;
+     margin: 20px 0; 
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+}
+
+.hand{
+  width: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
 #cookie:hover {
@@ -52,10 +59,15 @@ button {
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #24ce24;
 }
 
 p {
+    font-size: 18px;
+    color: #555;
+}
+
+h3{
     font-size: 18px;
     color: #555;
 }
