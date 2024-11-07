@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Document</title>
+    <title>Cookie gyme </title>
+
+    <link rel="icon" href="images/cookie1.png" type="image/x-icon">
 
 </head>
 
 <body>
+
+   
     <!--<h1>Cookie Clicker Game</h1>
     <div class="w3-light-grey">
         <div id="zilv" class="w3-container w3-zilver w3-center" style="width:0%">0%</div>
@@ -26,7 +30,10 @@
     <div id="handen2"></div>
     <h3>Punten: <span id="scoor">0</span></h3>-->
     <div class="container">
-        <div class="sectie">
+
+
+
+        <div class="sectie buy-sectie">
             <!--<h2>Aankoop Productie-eenheden</h2>
             <button onclick="buy()"> Koop Auto-Clicker (Kosten: 10 klikken)</button>
             <p>Aantal Auto-Clickers: <span id="AantalClickers">0</span></p>-->
@@ -51,16 +58,30 @@
                 
             </div>
             <hr>
+            <div id="auto-clickers-6" class="auto-clickers-6">
+                
+            </div>
+            <hr>
+            <div id="auto-clickers-7" class="auto-clickers-7">
+                
+            </div>
+            <hr>
+            <div id="auto-clickers-8" class="auto-clickers-8">
+                
+            </div>
+            <hr>
         </div>
-        
         <div class="sectie cookie-sectie">
+
+            <div class="titl1"> <h1>Cookie gyme</h1></div>
             <!--<h2>Upgrades</h2>
             <button onclick="Upgrades()">Koop Upgrade (+1 punt per klik, Kosten: 20 punten)</button>
             <p>Aantal Upgrades: <span id="showupgrades">0</span></p>-->
             <h3>Punten: <span id="scoor">0</span></h3>
+            <h5><span id="cookie-per-second">0</span> Cookie per second</h5>
             <img class="cookie" onclick="addPoint()" src="images/cookie1.png" alt="klik op de cookie">
         </div>
-        <div class="sectie">
+        <div class="sectie upgrade-sectie">
             <!--<h2>Overzicht</h2>
             <p>Auto-Clickers: <span id="Overzicht">0</span></p>
             <p>Upgrades:<span id="overzicht2">0</span></p>-->
@@ -71,10 +92,9 @@
                 </div>
                 <span>10 Punten</span>
                 <button onclick="buy('auto-clickers-1')">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <button onclick="Upgrades('autoUbgrade1')">Koop Upgrade</button>
             </div>
-            <div>een cookie per second</div>
-
+            <div><span id="autoUbgrade1">1</span> cookie per second</div>
             <hr>
             <div class="auto-clickers-2">
                 <div>
@@ -82,10 +102,12 @@
                 </div>
                 <span>50 Punten</span>
                 <button onclick="buy('auto-clickers-2')">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <button onclick="Upgrades('autoUbgrade2')">Koop Upgrade</button>
             </div>
-            <div>twee cookie per second</div>
+            <div><span id="autoUbgrade2">2</span> cookie per second</div>
             <hr>
+
+
 
             <div class="auto-clickers-3">
                 <div>
@@ -93,52 +115,75 @@
                 </div>
                 <span>100 Punten</span>
                 <button onclick="buy('auto-clickers-3')">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <button onclick="Upgrades('autoUbgrade3')">Koop Upgrade</button>
             </div>
-            <div>vier cookie per second</div>
+            <div> <span id="autoUbgrade3">4</span>  cookie per second</div>
             <hr>
-
-
-            
 
 
 
 
             <div class="auto-clickers-4">
                 <div>
-                    <img src="images/vliegtuig.png">
+                    <img src="images/auto-clicker-4.png">
                 </div>
-                <span>150 Punten</span>
+                <span>1000 Punten</span>
                 <button onclick="buy('auto-clickers-4')">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <button onclick="Upgrades('autoUbgrade4')">Koop Upgrade</button>
             </div>
-            <div>zes cookie per second</div>
+            <div> <span id="autoUbgrade4">8</span> cookie per second</div>
             <hr>
 
+        
 
-
-            <div class="auto-clickers-5"></div>
+            <div class="auto-clickers-5">
                 <div>
-                    <img src="images/boot.png">
+                    <img src="images/auto-clicker-5.png">
                 </div>
-                <span>200 Punten</span>
+                <span>2000 Punten</span>
                 <button onclick="buy('auto-clickers-5')">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <button onclick="Upgrades('autoUbgrade5')">Koop Upgrade</button>
             </div>
-            <div>acht cookie  per second</div>
+            <div> <span id="autoUbgrade5">16</span> cookie per second</div>
             <hr>
 
 
-
-
-            <!-- <div class="auto-clickers-4">
+            <div class="auto-clickers-6">
                 <div>
-                    <img src="images/icons8-hand-24.png">
+                    <img src="images/auto-clicker-6.png">
                 </div>
-                <button onclick="buy()">Verkoop</button>
-                <button onclick="">Koop Upgrade</button>
+                <span>4000 Punten</span>
+                <button onclick="buy('auto-clickers-6')">Verkoop</button>
+                <button onclick="Upgrades('autoUbgrade6')">Koop Upgrade</button>
             </div>
-            <hr> -->
+            <div><span id="autoUbgrade6">32</span> cookie per second</div>
+            <hr>
+
+            <div class="auto-clickers-7">
+                <div>
+                    <img src="images/auto-clicker-7.png">
+                </div>
+                <span>8000 Punten</span>
+                <button onclick="buy('auto-clickers-7')">Verkoop</button>
+                <button onclick="Upgrades('autoUbgrade7')">Koop Upgrade</button>
+            </div>
+            <div><span id="autoUbgrade7">64</span>  cookie per second</div>
+            <hr>
+
+
+            <div class="auto-clickers-8">
+                <div>
+                    <img src="images/auto-clicker-8.png">
+                </div>
+                <span>16000 Punten</span>
+                <button onclick="buy('auto-clickers-8')">Verkoop</button>
+                <button onclick="Upgrades('autoUbgrade8')">Koop Upgrade</button>
+            </div>
+            <div><span id="autoUbgrade8">128</span> cookie per second</div>
+            <hr>
+
+            <button onclick="reStart()">Verwijderen </button>
+            
         </div>
     </div>
     <script src="script.js"></script>

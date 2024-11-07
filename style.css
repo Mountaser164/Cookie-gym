@@ -59,12 +59,12 @@ h1 {
     transform: scale(1.05);
 }
 
-.hand {
-    width: 20px;
+/* .hand {
+    /*width: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-}
+    transition: transform 0.2s;*/
+/* }  */
 
 #cookie:hover {
     transform: scale(1.05);
@@ -83,13 +83,28 @@ h1 {
 .sectie {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 20px;
+    /* padding: 20px; */
+    padding-top: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     flex: 1;
 }
 
 .cookie-sectie {
-    padding-top: 10%;
+    padding-top: 5%;
+    background-image: url(images/confetti-girl-scout.gif);
+    background-size: cover;
+}
+
+.titl1 h1{
+    font-weight: bold;
+}
+
+.upgrade-sectie {
+    overflow-y: auto;
+}
+
+.buy-sectie {
+    overflow-y: auto;
 }
 
 button {
@@ -122,17 +137,35 @@ h3 {
 .auto-clickers-2,
 .auto-clickers-3,
 .auto-clickers-4,
-.auto-clickers-5 {
+.auto-clickers-5,
+.auto-clickers-6,
+.auto-clickers-7,
+.auto-clickers-8 {
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    min-height: 50px;
+    /* padding: 20px 0; */
+    background-size: cover;
 }
 
 .auto-clickers-1 > div,
 .auto-clickers-2 > div,
 .auto-clickers-3 > div,
 .auto-clickers-4 > div,
-.auto-clickers-5 > div {
+.auto-clickers-5 > div,
+.auto-clickers-6 > div,
+.auto-clickers-7 > div,
+.auto-clickers-8 > div  {
     flex: 1;
 } 
+
+.buy-sectie > div {
+    flex-wrap: wrap;
+}
+
+hr{
+   
+    margin: 0;
+}

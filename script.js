@@ -7,58 +7,157 @@ let second2 = 1000;
 let level = 0;
 let rechedDiamond = false;
 
-let AutoClickers1 = 0;
-let AutoClickers2 = 0;
-let AutoClickers3 = 0;
-let AutoClickers4 = 0;
-let AutoClickers5 = 0;
+
+
 
 // Start de game
 function startGyme() {
-    if (localStorage.getItem('score') !== null) {
+    
+    if (localStorage.getItem('score') !== null && localStorage.getItem('score') == NaN) {
         showScore();
     } else {
         localStorage.setItem("score", 0);
+        
     }
 
+
+
     if (localStorage.getItem("AutoClickers1") !== null) {
-        //showAutoClickers();
-        //startOutocliker();
+
+        document.getElementById("auto-clickers-1").style.backgroundImage = "url('images/zee.jpeg')";
+
+       for(let i = 1; i <= localStorage.getItem("AutoClickers1"); i++)
+            document.getElementById("auto-clickers-1").innerHTML += '<img class="hand" src="images/icons8-hand-24.png" alt="handfoto">';
     } else {
         localStorage.setItem("AutoClickers1", 0);
     }
 
     if (localStorage.getItem("AutoClickers2") !== null) {
-        //showAutoClickers();
-        //startOutocliker();
+        document.getElementById("auto-clickers-2").style.backgroundImage = "url('images/blankBG.jpg')";
+        for(let i = 1; i <= localStorage.getItem("AutoClickers2"); i++)
+            document.getElementById("auto-clickers-2").innerHTML += '<img class="hand" src="images/Banden.png" alt="handfoto">';
     } else {
         localStorage.setItem("AutoClickers2", 0);
     }
     
     if (localStorage.getItem("AutoClickers3") !== null) {
-        //showAutoClickers();
-        //startOutocliker();
+        for(let i = 1; i <= localStorage.getItem("AutoClickers3"); i++)
+            document.getElementById("auto-clickers-3").innerHTML += '<img class="hand" src="images/auto.png" alt="handfoto">';
     } else {
         localStorage.setItem("AutoClickers3", 0);
     }
 
-    
-
-
     if (localStorage.getItem("AutoClickers4") !== null) {
-        //showAutoClickers();
-        //startOutocliker();
+        for(let i = 1; i <= localStorage.getItem("AutoClickers4"); i++)
+            document.getElementById("auto-clickers-4").innerHTML += '<img class="hand" src="images/auto-clicker-4.png" alt="handfoto">';
     } else {
         localStorage.setItem("AutoClickers4", 0);
     }
+
+    if (localStorage.getItem("AutoClickers5") !== null) {
+        for(let i = 1; i <= localStorage.getItem("AutoClickers5"); i++)
+            document.getElementById("auto-clickers-5").innerHTML += '<img class="hand" src="images/auto-clicker-5.png" alt="handfoto">';
+    } else {
+        localStorage.setItem("AutoClickers5", 0);
+    }
+
+    if (localStorage.getItem("AutoClickers6") !== null) {
+        for(let i = 1; i <= localStorage.getItem("AutoClickers6"); i++)
+            document.getElementById("auto-clickers-6").innerHTML += '<img class="hand" src="images/auto-clicker-6.png" alt="handfoto">';
+    } else {
+        localStorage.setItem("AutoClickers6", 0);
+    }
+
+    if (localStorage.getItem("AutoClickers7") !== null) {
+        for(let i = 1; i <= localStorage.getItem("AutoClickers7"); i++)
+            document.getElementById("auto-clickers-7").innerHTML += '<img class="hand" src="images/auto-clicker-7.png" alt="handfoto">';
+    } else {
+        localStorage.setItem("AutoClickers7", 0);
+    }
+
+    if (localStorage.getItem("AutoClickers8") !== null) {
+        for(let i = 1; i <= localStorage.getItem("AutoClickers8"); i++)
+            document.getElementById("auto-clickers-8").innerHTML += '<img class="hand" src="images/auto-clicker-8.png" alt="handfoto">';
+    } else {
+        localStorage.setItem("AutoClickers8", 0);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade1")!==null) {
+
+        document.getElementById("autoUbgrade1").innerHTML = localStorage.getItem("autoUbgrade1")
+    }else{
+        localStorage.setItem("autoUbgrade1" , 1);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade2")!==null) {
+
+        document.getElementById("autoUbgrade2").innerHTML = localStorage.getItem("autoUbgrade2")
+    }else{
+        localStorage.setItem("autoUbgrade2" , 2);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade3")!==null) {
+
+        document.getElementById("autoUbgrade3").innerHTML = localStorage.getItem("autoUbgrade3")
+    }else{
+        localStorage.setItem("autoUbgrade3" , 4);
+    }
+
+    if(localStorage.getItem("autoUbgrade4")!==null) {
+
+        document.getElementById("autoUbgrade4").innerHTML = localStorage.getItem("autoUbgrade4")
+    }else{
+        localStorage.setItem("autoUbgrade4" , 8);
+    }
+
+
+
+    if(localStorage.getItem("autoUbgrade5")!==null) {
+
+        document.getElementById("autoUbgrade5").innerHTML = localStorage.getItem("autoUbgrade5")
+    }else{
+        localStorage.setItem("autoUbgrade5" , 16);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade6")!==null) {
+
+        document.getElementById("autoUbgrade6").innerHTML = localStorage.getItem("autoUbgrade6")
+    }else{
+        localStorage.setItem("autoUbgrade6" , 32);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade7")!==null) {
+
+        document.getElementById("autoUbgrade7").innerHTML = localStorage.getItem("autoUbgrade7")
+    }else{
+        localStorage.setItem("autoUbgrade7" , 64);
+    }
+
+
+    if(localStorage.getItem("autoUbgrade8")!==null) {
+
+        document.getElementById("autoUbgrade8").innerHTML = localStorage.getItem("autoUbgrade8")
+    }else{
+        localStorage.setItem("autoUbgrade8" , 128);
+    }
+
+ 
+
+
+
+    showCookiePreSecond();
+    startOutocliker();
 }
 
 
 // Punten toevoegen
 function addPoint() {
     let score = parseInt(localStorage.getItem("score"));
-
-    console.log(score);
     score++;
     localStorage.setItem("score", score);
     
@@ -90,9 +189,9 @@ function showAutoClickers() {
 }
 
 // Automatische clicker kopen
-function buy(sort) {
+function buy(sort){
     let score = parseInt(localStorage.getItem("score"));
-    let cost = 0
+    let cost = 0; 
     if(sort == 'auto-clickers-1') {
         cost = 10;
     }
@@ -106,11 +205,23 @@ function buy(sort) {
     }
 
     if(sort == 'auto-clickers-4') {
-        cost = 150;
+        cost = 1500;
     }
 
     if(sort == 'auto-clickers-5') {
-        cost = 200;
+        cost = 2000;
+    }
+
+    if(sort == 'auto-clickers-6') {
+        cost = 4000;
+    }
+
+    if(sort == 'auto-clickers-7') {
+        cost = 8000;
+    }
+
+    if(sort == 'auto-clickers-8') {
+        cost = 16000;
     }
 
     if (score >= cost) {
@@ -121,31 +232,59 @@ function buy(sort) {
             let AutoClickers1 = parseInt(localStorage.getItem("AutoClickers1"));
             AutoClickers1++;
             localStorage.setItem("AutoClickers1", AutoClickers1);
+
+            document.getElementById("auto-clickers-1").style.backgroundImage = "url('images/zee.jpeg')";
+
         }
         
         if(sort == 'auto-clickers-2') {
             let AutoClickers2 = parseInt(localStorage.getItem("AutoClickers2"));
             AutoClickers2++;
             localStorage.setItem("AutoClickers2", AutoClickers2);
+
+            document.getElementById("auto-clickers-2").style.backgroundImage = "url('images/blankBG.jpg')";
         }
     
         if(sort == 'auto-clickers-3') {
             let AutoClickers3 = parseInt(localStorage.getItem("AutoClickers3"));
             AutoClickers3++;
             localStorage.setItem("AutoClickers3", AutoClickers3);
+            document.getElementById("auto-clickers-3").style.backgroundImage = "url('images/zee.jpeg')";
         }
-
 
         if(sort == 'auto-clickers-4') {
             let AutoClickers4 = parseInt(localStorage.getItem("AutoClickers4"));
             AutoClickers4++;
             localStorage.setItem("AutoClickers4", AutoClickers4);
+            document.getElementById("auto-clickers-4").style.backgroundImage = "url('images/blankBG.jpg')";
         }
 
-        if(sort == 'auto-clickers-5'){
+        if(sort == 'auto-clickers-5') {
             let AutoClickers5 = parseInt(localStorage.getItem("AutoClickers5"));
             AutoClickers5++;
-            localStorage.setItem("AutoCickers5", AutoClickers5);
+            localStorage.setItem("AutoClickers5", AutoClickers5);
+            document.getElementById("auto-clickers-5").style.backgroundImage = "url('images/zee.jpeg')";
+        }
+
+        if(sort == 'auto-clickers-6') {
+            let AutoClickers6 = parseInt(localStorage.getItem("AutoClickers6"));
+            AutoClickers6++;
+            localStorage.setItem("AutoClickers6", AutoClickers6);
+            document.getElementById("auto-clickers-6").style.backgroundImage = "url('images/blankBG.jpg')";
+        }
+
+        if(sort == 'auto-clickers-7') {
+            let AutoClickers7 = parseInt(localStorage.getItem("AutoClickers7"));
+            AutoClickers7++;
+            localStorage.setItem("AutoClickers7", AutoClickers7);
+            document.getElementById("auto-clickers-7").style.backgroundImage = "url('images/zee.jpeg')";
+        }
+
+        if(sort == 'auto-clickers-8') {
+            let AutoClickers8 = parseInt(localStorage.getItem("AutoClickers8"));
+            AutoClickers8++;
+            localStorage.setItem("AutoClickers8", AutoClickers8);
+            document.getElementById("auto-clickers-8").style.backgroundImage = "url('images/blankBG.jpg')";
         }
 
         showScore();
@@ -155,6 +294,7 @@ function buy(sort) {
 
         alert("Your buy is successful");
 
+        showCookiePreSecond();
         startOutocliker();
     } else {
         alert("You don't have enough cookies");
@@ -178,27 +318,156 @@ function showlevel() {
 }
 
 // Upgrades kopen
-function Upgrades() {
+function Upgrades(soort) {
     let score = parseInt(localStorage.getItem("score"));
 
-    if (score >= 20) {
-        score -= 20;
+    let cost = 0; 
+    if(soort == 'autoUbgrade1') {
+        cost = 20;
+    }
+
+    if(soort == 'autoUbgrade2') {
+        cost = 60;
+    }
+
+    if(soort == 'autoUbgrade3') {
+        cost = 120;
+    }
+
+    if(soort == 'autoUbgrade4') {
+        cost = 1500;
+    }
+
+    if(soort == 'autoUbgrade5') {
+        cost = 2200;
+    }
+
+
+    if(soort == 'autoUbgrade6') {
+        cost = 4200;
+    }
+
+    if(soort == 'autoUbgrade7') {
+        cost = 8200;
+    }
+
+    if(soort == 'autoUbgrade8') {
+        cost = 16200 ;
+    }
+
+
+    if (score >= cost) {
+        score -= cost;
         localStorage.setItem("score", score);
 
-        Upgrad++;
-        showhand2();
-        showScore();
+        // Upgrad++;
 
-        document.getElementById("overzicht2").innerHTML = Upgrad;
-        document.getElementById("showupgrades").innerHTML = Upgrad;
+        if(soort == "autoUbgrade1" ){
+            let autoUbgrade1 = localStorage.getItem( "autoUbgrade1")
+
+        autoUbgrade1 = autoUbgrade1 * 2 ;
+
+        localStorage.setItem("autoUbgrade1", autoUbgrade1);
+
+        document.getElementById("autoUbgrade1").innerHTML = autoUbgrade1;
+    }
+
+
+
+        if(soort == "autoUbgrade2" ){
+            let autoUbgrade2 = localStorage.getItem( "autoUbgrade2")
+
+            autoUbgrade2 = autoUbgrade2 * 2 ;
+    
+            localStorage.setItem("autoUbgrade2", autoUbgrade2);
+            document.getElementById("autoUbgrade2").innerHTML = autoUbgrade2;
+        }
+
+
+        
+        if(soort == "autoUbgrade3" ){
+            let autoUbgrade3 = localStorage.getItem( "autoUbgrade3")
+
+            autoUbgrade3 = autoUbgrade3 * 2 ;
+    
+            localStorage.setItem("autoUbgrade3", autoUbgrade3);
+            document.getElementById("autoUbgrade3").innerHTML = autoUbgrade3;
+        }
+
+
+        if(soort == "autoUbgrade4" ){
+            let autoUbgrade4 = localStorage.getItem( "autoUbgrade4")
+
+            autoUbgrade4 = autoUbgrade4 * 2 ;
+    
+            localStorage.setItem("autoUbgrade4", autoUbgrade4);
+            document.getElementById("autoUbgrade4").innerHTML = autoUbgrade4;
+        }
+
+
+
+        if(soort == "autoUbgrade5" ){
+            let autoUbgrade5 = localStorage.getItem( "autoUbgrade5")
+
+            autoUbgrade5 = autoUbgrade5 * 2 ;
+    
+            localStorage.setItem("autoUbgrade5", autoUbgrade5);
+            document.getElementById("autoUbgrade5").innerHTML = autoUbgrade5;
+        }
+     
+
+        if(soort == "autoUbgrade6" ){
+            let autoUbgrade6 = localStorage.getItem( "autoUbgrade6")
+
+            autoUbgrade6 = autoUbgrade6 * 2 ;
+    
+            localStorage.setItem("autoUbgrade6", autoUbgrade6);
+            document.getElementById("autoUbgrade6").innerHTML = autoUbgrade6;
+        }
+
+
+        if(soort == "autoUbgrade7" ){
+            let autoUbgrade7 = localStorage.getItem( "autoUbgrade7")
+
+            autoUbgrade7 = autoUbgrade7 * 2 ;
+    
+            localStorage.setItem("autoUbgrade7", autoUbgrade7);
+            document.getElementById("autoUbgrade7").innerHTML = autoUbgrade7;
+        }
+
+
+
+        if(soort == "autoUbgrade8" ){
+            let autoUbgrade8 = localStorage.getItem( "autoUbgrade8")
+
+            autoUbgrade8 = autoUbgrade8 * 2 ;
+    
+            localStorage.setItem("autoUbgrade8", autoUbgrade8);
+            document.getElementById("autoUbgrade8").innerHTML = autoUbgrade8;
+        }
+     
+
+        // showhand2();
+        showScore();
+        showCookiePreSecond()
+
+        
+
+        // document.getElementById("overzicht2").innerHTML = Upgrad;
+        // document.getElementById("showupgrades").innerHTML = Upgrad;
 
         alert("Your buy is successful");
 
-        startUpgradcliker();
+        //startUpgradcliker();
     } else {
         alert("You don't have enough cookies");
     }
+
+
 }
+
+
+
 
 // Automatische punten toevoegen met interval
 function startOutocliker() {
@@ -217,18 +486,25 @@ function showAutoClickersImg(sort) {
         document.getElementById("auto-clickers-1").innerHTML += '<img class="hand" src="images/icons8-hand-24.png" alt="handfoto">';
 
     if(sort == 'auto-clickers-2')
-        document.getElementById("auto-clickers-2").innerHTML += '<img class="hand" src="images/Banden.png" alt="handfoto">';
+        document.getElementById("auto-clickers-2").innerHTML += '<img class="Banden" src="images/Banden.png" alt="handfoto">';
 
     if(sort == 'auto-clickers-3')
-        document.getElementById("auto-clickers-3").innerHTML += '<img class="hand" src="images/auto.png" alt="handfoto">';
-
+        document.getElementById("auto-clickers-3").innerHTML += '<img class="auto" src="images/auto.png" alt="handfoto">';
 
     if(sort == 'auto-clickers-4')
-        document.getElementById("auto-clickers-4").innerHTML += '<img class="hand" src="images/vliegtuig.png" alt="handfoto">';
-
+        document.getElementById("auto-clickers-4").innerHTML += '<img class="auto" src="images/auto-clicker-4.png" alt="handfoto">';
+    
     if(sort == 'auto-clickers-5')
-        document.getElementById("auto-clickers-5").innerHTML += '<img class="hand"  src="images/boot.png" alt=handfoto">';
-
+        document.getElementById("auto-clickers-5").innerHTML += '<img class="auto" src="images/auto-clicker-5.png" alt="handfoto">';
+    
+    if(sort == 'auto-clickers-6')
+        document.getElementById("auto-clickers-6").innerHTML += '<img class="auto" src="images/auto-clicker-6.png" alt="handfoto">';
+    
+    if(sort == 'auto-clickers-7')
+        document.getElementById("auto-clickers-7").innerHTML += '<img class="auto" src="images/auto-clicker-7.png" alt="handfoto">';
+    
+    if(sort == 'auto-clickers-8')
+        document.getElementById("auto-clickers-8").innerHTML += '<img class="auto" src="images/auto-clicker-8.png" alt="handfoto">';
 
 }
 
@@ -240,11 +516,24 @@ function handenaddpoint() {
     let AutoClickers3 = parseInt(localStorage.getItem("AutoClickers3"));
     let AutoClickers4 = parseInt(localStorage.getItem("AutoClickers4"));
     let AutoClickers5 = parseInt(localStorage.getItem("AutoClickers5"));
+    let AutoClickers6 = parseInt(localStorage.getItem("AutoClickers6"));
+    let AutoClickers7 = parseInt(localStorage.getItem("AutoClickers7"));
+    let AutoClickers8 = parseInt(localStorage.getItem("AutoClickers8"));
+
+    let autoUbgrade1 = parseInt(localStorage.getItem("autoUbgrade1"));
+    let autoUbgrade2 = parseInt(localStorage.getItem("autoUbgrade2"));
+    let autoUbgrade3 = parseInt(localStorage.getItem("autoUbgrade3"));
+    let autoUbgrade4 = parseInt(localStorage.getItem("autoUbgrade4"));
+    let autoUbgrade5 = parseInt(localStorage.getItem("autoUbgrade5"));
+    let autoUbgrade6 = parseInt(localStorage.getItem("autoUbgrade6"));
+    let autoUbgrade7 = parseInt(localStorage.getItem("autoUbgrade7"));
+    let autoUbgrade8 = parseInt(localStorage.getItem("autoUbgrade8"));
 
 
-    score = score + (AutoClickers1 * 1 + AutoClickers2 * 2 + AutoClickers3 * 4 + AutoClickers3 * 6 + AutoClickers3 * 8);
+
+    score = score + (AutoClickers1 * autoUbgrade1 + AutoClickers2 * autoUbgrade2 + AutoClickers3 * autoUbgrade3 + AutoClickers4 * autoUbgrade4
+                    + AutoClickers5 * autoUbgrade5 + AutoClickers6 * autoUbgrade6 + AutoClickers7 * autoUbgrade7 + AutoClickers8 * autoUbgrade8);
     localStorage.setItem("score", score);
-
     showScore();
 }
 
@@ -260,8 +549,38 @@ function showhand2() {
     document.getElementById("handen2").innerHTML += '<img class="hand" src="images/icons8-hand-24.png" alt="handfoto">';
 }
 
+function showCookiePreSecond() {
+    let AutoClickers1 = parseInt(localStorage.getItem("AutoClickers1"));
+    let AutoClickers2 = parseInt(localStorage.getItem("AutoClickers2"));
+    let AutoClickers3 = parseInt(localStorage.getItem("AutoClickers3"));
+    let AutoClickers4 = parseInt(localStorage.getItem("AutoClickers4"));
+    let AutoClickers5 = parseInt(localStorage.getItem("AutoClickers5"));
+    let AutoClickers6 = parseInt(localStorage.getItem("AutoClickers6"));
+    let AutoClickers7 = parseInt(localStorage.getItem("AutoClickers7"));
+    let AutoClickers8 = parseInt(localStorage.getItem("AutoClickers8"));
+
+    let autoUbgrade1 = parseInt(localStorage.getItem("autoUbgrade1"));
+    let autoUbgrade2 = parseInt(localStorage.getItem("autoUbgrade2"));
+    let autoUbgrade3 = parseInt(localStorage.getItem("autoUbgrade3"));
+    let autoUbgrade4 = parseInt(localStorage.getItem("autoUbgrade4"));
+    let autoUbgrade5 = parseInt(localStorage.getItem("autoUbgrade5"));
+    let autoUbgrade6 = parseInt(localStorage.getItem("autoUbgrade6"));
+    let autoUbgrade7 = parseInt(localStorage.getItem("autoUbgrade7"));
+    let autoUbgrade8 = parseInt(localStorage.getItem("autoUbgrade8"));
+
+    CookieCount = AutoClickers1 * autoUbgrade1 + AutoClickers2 * autoUbgrade2 + AutoClickers3 * autoUbgrade3 + AutoClickers4 * autoUbgrade4
+                    + AutoClickers5 * autoUbgrade5 + AutoClickers6 * autoUbgrade6 + AutoClickers7 * autoUbgrade7 + AutoClickers8 * autoUbgrade8;
+
+    
+
+    document.getElementById('cookie-per-second').innerHTML = CookieCount;
+}
+
 // Start de game bij het laden van de pagina
 startGyme();
 
-// Interval om elke seconde een punt toe te voegen
-//setInterval(addPoint, 1000);
+
+function reStart(){
+    localStorage.clear();
+    localStorage.setItem('score' , 0);
+}
